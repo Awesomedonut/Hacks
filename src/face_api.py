@@ -2,7 +2,6 @@ import requests
 import json
 from flask import jsonify
 
-
 def image_response(path):
     key = '904a6a032d1642908cadf606221da745'
     url = "https://akshit.cognitiveservices.azure.com/face/v1.0/detect"

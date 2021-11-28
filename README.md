@@ -1,15 +1,15 @@
 
-# <center> EmotiỘ </center> #
+# <center> The Fellowship of the pog  </center> #
 
-![EmotioỘ](./static/assets/emotio.jpg)
+![EmotioỘ](./static/assets/logo.png)
 
 
-### Intelligent emotion recognition and music recommendation ##
+### Intelligent emotion recognition and Movie recommendation ##
 
-<img align = center src="https://img.shields.io/github/issues/amankumar11/Dashboard-Chartjs?style=plastic">
+<!-- <img align = center src="https://img.shields.io/github/issues/amankumar11/Dashboard-Chartjs?style=plastic">
 <img align =center src="https://img.shields.io/docker/automated/amankumar11/Dashboard-Chartjs">
 <img align = center src="https://img.shields.io/github/issues-raw/amankumar11/Dashboard-Chartjs">
-
+ -->
 
 ---
 ## Docker  ##

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="text-gray-400 bg-gray-900 body-font">
+            <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+              <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+                <img src="{{url_for('static', filename='assets/logo.png')}}" width="38" height="38">
+
+
+              
+
+                <span class="ml-3 text-xl">The Fellowship of the Pog</span>
+              </a>
+              <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <a class="mr-5 hover:text-white" href="/">Home</a>
+                <a class="mr-5 hover:text-white" href="/emotions">Data</a>
+                <a class="mr-5 hover:text-white" href="/contrib">The Fellowship of the Pog Team Members</a>
+          
+              </nav>
+              <button class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Button
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+        
+          <section class="text-gray-400 bg-gray-900 body-font">
+            <div class="container px-5 py-24 mx-auto flex flex-wrap">
+              <div>
+                <div class="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
+                  <div class="flex relative pb-12">
+                    <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                      <div class="h-full w-1 bg-gray-800 pointer-events-none"></div>
+                    </div>
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                      </svg>
+                    </div>
+                    {% for movie in array %}
+
+                    <div class="flex-grow pl-4">
+                      <h2 class="font-medium title-font text-sm text-white mb-1 tracking-wider">{{movie.title}}</h2>
+                      <p class="leading-relaxed">{{movie.desc}}</p>
+                    </div>
+                  </div>
+                  <div class="flex relative pb-12">
+                    <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                      <div class="h-full w-1 bg-gray-800 pointer-events-none"></div>
+                    </div>
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                      </svg>
+                    </div>
+
+              {% endfor %}
+          
+
+                <div id="chartContainer" style="height: 370px; width: 370px; position: fixed; right: 100px; top: 100px">
+                <script class="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12">
+                  let log = {{log|safe}};
+                  window.onload = function() {
+                    
+                  var chart = new CanvasJS.Chart("chartContainer", {
+                    theme: "light2", // "light1", "light2", "dark1", "dark2"
+                    exportEnabled: true,
+                    animationEnabled: true,
+                    title: {
+                      text: "Emotion Data"
+                    },
+                    data: [{
+                      type: "pie",
+                      startAngle: 25,
+                      toolTipContent: "<b>{label}</b>: {y}%",
+                      showInLegend: "true",
+                      legendText: "{label}",
+                      indexLabelFontSize: 16,
+                      indexLabel: "{label} - {y}%",
+                      dataPoints: [
+                        { y: log[0], label: "Happy" },
+                        { y: log[1], label: "Sad" },
+                        { y: log[2], label: "Scared" },
+                        { y: log[3], label: "Mad" },
+                        { y: log[4], label: "Confused" }
+                      ]
+                    }]
+                  });
+                  chart.render();
+                  
+                  }
+                  
+                  </script>
+                </div>
+
+
+              </div>
+            </div>
+          </section>
+
+    </body>
+
+
+      
+      <body>
+      
+      <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+      </body>
+
+</html>
