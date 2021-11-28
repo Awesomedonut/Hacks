@@ -32,8 +32,8 @@ def getMaxEmotion(lst):
       
   return emotion_str[maxIndex]
 
-# emotionVAl=val()
-emotionVAl=[1,0.5,0.9,0.8,0]
+emotionVAl=val()
+#emotionVAl=[1,0.5,0.9,0.8,0]
 
 Maxemotion = getMaxEmotion(emotionVAl)
 
