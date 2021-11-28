@@ -1,77 +1,23 @@
 
 # <center> The Fellowship of the pog  </center> #
 
-![EmotioỘ](./static/assets/logo.png)
+![FOTP](./static/assets/logo.png)
 
 
 ### Intelligent emotion recognition and Movie recommendation ##
 
-<!-- <img align = center src="https://img.shields.io/github/issues/amankumar11/Dashboard-Chartjs?style=plastic">
-<img align =center src="https://img.shields.io/docker/automated/amankumar11/Dashboard-Chartjs">
-<img align = center src="https://img.shields.io/github/issues-raw/amankumar11/Dashboard-Chartjs">
- -->
-
----
-## Docker  ##
-
-> pull from docker registry
 
 
-```bash  
-docker pull holychicken99/emotio:0.1
-```
+
 ### To run 
-#### For Linux ####
+#### For U*nix  and Windows####
 > supports webcam feed on linux
 ```bash
-docker run -it -p 5000:5000 --device /dev/video0 holychicken99/emotio:0.1 
+pip3 install -r requirements
+python3 main.py
 ```
 
-#### For Windows ####
 
-```bash 
-docker run -it -p 5000:5000  holychicken99/emotio:0.1
-```
----
-> :warning: Manual Build works only on Linux  OS !
-### Run Locally
-Clone the project
-
-```bashD
-  git clone https://link-to-project
-```
-
-Go to the project directory
-
-```bash
-  cd CLI
-```
-
-Install dependencies
-
-```bash
-  pip install -r requirements.txt
-```
-
-Start the server
-
-```bash
-    python3 backend.py
-```
-
-  
----
-
-<details>
-<summary> <strong><font size="+2"> Screenshots </font></strong/></summary>
-  <br>
-  
-
-
-![App Screenshot](/static/assets/ss1.png)
-
-
-  ![App Screenshot](/static/assets/ss2.png)
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
